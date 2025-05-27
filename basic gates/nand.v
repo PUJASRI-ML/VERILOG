@@ -18,16 +18,16 @@ endmodule
 
 //Testbench
 module nand_tb;
-reg A,B;
-wire out_nand;
-   nand_gate dut(.A(A),.B(B),.out_nand(out_nand));
+reg a,b;
+wire y;
+   nand_gate dut(.a(a),.b(b),.y(y));
 initial begin
    $display("NAND GATE TRUTH TABLE");
-   $monitor("A : %b B : %b     OUT : %b ",A,B,out_nand);
-A = 0 ; B = 0 ; #10 ;
-A = 0 ; B = 1 ; #10 ;
-A = 1 ; B = 0 ; #10 ;
-A = 1 ; B = 1 ; #10 ;
+   $monitor("a : %b b : %b     y : %b ",a,b,y);
+a = 0 ; b = 0 ; #10 ;
+a = 0 ; b = 1 ; #10 ;
+a = 1 ; b = 0 ; #10 ;
+a = 1 ; b = 1 ; #10 ;
 $finish;
 end
 //TO VIEW WAVEFORMS
