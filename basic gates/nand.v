@@ -17,13 +17,13 @@ module nand_gate(output y, input a,b);
 endmodule
 
 //Testbench
-module and_tb;
+module nand_tb;
 reg A,B;
-wire out_and;
-and_gate dut(.A(A),.B(B),.out_and(out_and));
+wire out_nand;
+   nand_gate dut(.A(A),.B(B),.out_nand(out_nand));
 initial begin
-$display("AND GATE TRUTH TABLE");
-$monitor("A : %b B : %b     OUT : %b ",A,B,out_and);
+   $display("NAND GATE TRUTH TABLE");
+   $monitor("A : %b B : %b     OUT : %b ",A,B,out_nand);
 A = 0 ; B = 0 ; #10 ;
 A = 0 ; B = 1 ; #10 ;
 A = 1 ; B = 0 ; #10 ;
@@ -32,7 +32,7 @@ $finish;
 end
 //TO VIEW WAVEFORMS
 initial begin
-$dumpfile("and_gate.vcd");
+$dumpfile("nand_gate.vcd");
 $dumpvars(0,and_tb);
 end
 endmodule
