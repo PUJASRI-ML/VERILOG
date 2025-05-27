@@ -33,6 +33,6 @@ end
 //TO VIEW WAVEFORMS
 initial begin
 $dumpfile("nand_gate.vcd");
-$dumpvars(0,and_tb);
+$dumpvars(0,nand_tb);
 end
 endmodule
