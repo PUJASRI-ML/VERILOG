@@ -18,16 +18,16 @@ endmodule
 
 //Testbench
 module nor_tb;
-reg A,B;
-wire out_nor;
-  nor_gate dut(.A(A),.B(B),.out_nor(out_nor));
+reg a,b;
+wire y;
+   nor_gate dut(.a(a),.b(b),.y(y));
 initial begin
   $display("NOR GATE TRUTH TABLE");
-  $monitor("A : %b B : %b     OUT : %b ",A,B,out_nor);
-A = 0 ; B = 0 ; #10 ;
-A = 0 ; B = 1 ; #10 ;
-A = 1 ; B = 0 ; #10 ;
-A = 1 ; B = 1 ; #10 ;
+   $monitor("a : %b b : %b     y : %b ",a,b,y);
+a = 0 ; b = 0 ; #10 ;
+a = 0 ; b = 1 ; #10 ;
+a = 1 ; b = 0 ; #10 ;
+a = 1 ; b = 1 ; #10 ;
 $finish;
 end
 //TO VIEW WAVEFORMS
