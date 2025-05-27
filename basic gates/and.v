@@ -18,16 +18,16 @@ endmodule
 
 //Testbench
 module and_tb;
-reg A,B;
-wire out_and;
-and_gate dut(.A(A),.B(B),.out_and(out_and));
+reg a,b;
+wire y;
+   and_gate dut(.a(a),.b(b),.y(y));
 initial begin
 $display("AND GATE TRUTH TABLE");
-$monitor("A : %b B : %b     OUT : %b ",A,B,out_and);
-A = 0 ; B = 0 ; #10 ;
-A = 0 ; B = 1 ; #10 ;
-A = 1 ; B = 0 ; #10 ;
-A = 1 ; B = 1 ; #10 ;
+   $monitor("a : %b b : %b     y : %b ",a,b,y);
+a = 0 ; b = 0 ; #10 ;
+a = 0 ; b = 1 ; #10 ;
+a = 1 ; b = 0 ; #10 ;
+a = 1 ; b = 1 ; #10 ;
 $finish;
 end
 //TO VIEW WAVEFORMS
