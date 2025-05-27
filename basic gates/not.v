@@ -15,3 +15,4 @@ endmodule
 module not_gate(output y, input a);
    not n1(y,a);
 endmodule
+
